@@ -36,5 +36,19 @@ module AgendaContatos
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.middleware.insert_before 0, Rack::Cors do
+    
+      allow do
+        # pode disponibilizar o ip de apenas um cliente
+        origins '*'
+        # pode permitir entrada de recursos grupo de model (por exemplo só users)
+        resource '*',
+        # qual o cabeçalho?
+        headers: :any,
+        # métodos que pode ser usado 
+        methods: %i(get post put patch delete options head)
+      end
+    end
+    condig.middleware.use Rack::Attack
   end
 end
