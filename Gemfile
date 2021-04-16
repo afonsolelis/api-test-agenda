@@ -45,3 +45,5 @@ gem 'rack-cors'
 gem 'rack-attack'
 # devise
 gem 'devise'
+# simple token
+gem 'simple_token_authentication', '~> 1.0'

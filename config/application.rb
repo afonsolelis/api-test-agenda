@@ -49,6 +49,6 @@ module AgendaContatos
         methods: %i(get post put patch delete options head)
       end
     end
-    condig.middleware.use Rack::Attack
+    config.middleware.use Rack::Attack
   end
 end
